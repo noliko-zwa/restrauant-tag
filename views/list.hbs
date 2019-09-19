@@ -1,0 +1,57 @@
+<h1>list of my sh*t</h1>
+<a href="/my-map"> <button class="big-btn" type="submit">
+    <h3>see this sh*t on a map</h3><br><img src="/images/food-pin-white.png" alt="">
+  </button></a>
+
+{{#if user}}
+{{#if restaurantList}}
+<div class="container filter-container">
+  <div class="accordion">
+    <div class="accordion-item filter-accordion">
+      <p>filter your list</p>
+      <div class="content filter">
+        <a class="filter-item" href="/onlyNew">
+          <button class="tried-btn onlyNew accordion-btn" type="submit">new sh*t</button></a> <br>
+        <a class="filter-item" href="/already">
+          <button class="tried-btn already  accordion-btn" type="submit">sh*t I already tried</button></a> <br>
+        <a class="filter-item" href="/list">
+          <button class="tried-btn allFood  accordion-btn" type="submit">all my sh*t</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="accordion">
+    {{#each restaurantList}}
+    <div class="accordion-item rest-accordion">
+      <a>{{name}}</a>
+      <div class="content">
+        <p class="rest-list-address">{{display_address}}</p>
+        <p class="rest-list-type">{{#each categories}}{{title}} {{/each}}</p>
+        <p class="rest-list-price-range">{{price}}</p>
+        {{#if tried}}
+        {{else}}
+        <div class="new-label"><strong>new!</strong></div>
+        <form action="/update_tried/{{_id}}" method="post">
+          <button class="tried-btn accordion-btn" type="submit">I tried that sh*t</button></form>
+        {{/if}}
+        <form action="/delete-result/{{_id}}" method="post">
+          <button class="delete-btn accordion-btn" type="submit">delete from my list</button>
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+{{else}}
+<h2>your list is empty!</h2>
+<h3> <a href="/map">add some sh*t to it</a></h3>
+{{/if}}
+{{else}}
+<div class="no-user">
+  <h2>you're not logged in!</h2>
+  <h3><a href="/auth/signup">sign up</a> or <a href="/auth/login">log in</a> to see sh*t you wanna eat</h3>
+</div>
+{{/if}}

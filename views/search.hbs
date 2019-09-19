@@ -1,0 +1,23 @@
+<h2>add this sh*t</h2>
+{{!-- add a link to "map" to view the results on the map --}}
+{{#each results}}
+<div class="list-element">
+  <div class="list-element-info">
+    <h2 class="rest-list-name"> {{name}} </h2>
+    <p class="rest-list-address">{{location.display_address}}</p>
+    <p class="rest-list-type">{{#each categories}}{{title}} {{/each}}</p>
+    <p class="rest-list-price-range">{{price}}</p>
+  </div>
+  <div>
+    <form action="/add-result/{{id}}" method="get">
+      <button class="add-btn" type="submit">+</button></form>
+    {{!-- <img src="../public/images/plus-icon.png" alt="add that sh*t"> --}}
+  </div>
+  {{!-- add different onclick="togglepopup()" popups: added that shit if logged in, or link to log in if not --}}
+  <div class="popup">
+    <p>added that sh*t</p>
+    <a href="/list"><button type="submit">go to my list</button></a>
+  </div>
+  {{!-- <p class="rest-list-open-now">open now</p> --}}
+</div>
+{{/each}}

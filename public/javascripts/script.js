@@ -1,0 +1,35 @@
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    console.log("IronGenerator JS imported successfully!");
+  },
+  false
+);
+
+// navbar menu
+
+const tabmenu = () => {
+  "use strict";
+  const navIcon = document.querySelector("#nav-icon");
+
+  navIcon.addEventListener("click", () => {
+    document.body.classList.toggle("background--blur");
+    navIcon.classList.toggle("open");
+    const menu = document.querySelector(".menu--off ");
+    menu.classList.toggle("menu--on");
+  });
+};
+tabmenu();
+
+
+const items = document.querySelectorAll(".accordion a");
+const filterItem = document.querySelectorAll(".filter-accordion p");
+
+function toggleAccordion() {
+  console.log("clicked");
+  this.classList.toggle("active");
+  this.nextElementSibling.classList.toggle("active");
+}
+
+items.forEach(item => item.addEventListener("click", toggleAccordion));
+filterItem.forEach(item => item.addEventListener("click", toggleAccordion));

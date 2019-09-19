@@ -1,0 +1,37 @@
+{{#if user}}
+{{#if restaurant}}
+<h1>look at this sh*t</h1>
+<div class="list">
+  <div class="list-element">
+    <div class="list-element-info">
+      <h2 class="rest-list-name"> {{restaurant.name}} </h2>
+      <p class="rest-list-address">{{restaurant.display_address}}</p>
+      <p class="rest-list-type">{{#each restaurant.categories}}{{title}} {{/each}}</p>
+      <p class="rest-list-price-range">{{restaurant.price}}</p>
+      {{#if restaurant.tried}}
+      {{else}}
+      <div class="new-label"><strong>new!</strong></div>
+      <form action="/update_tried/{{_id}}" method="post">
+        <button class="tried-btn accordion-btn" type="submit">I tried that sh*t</button></form>
+      {{/if}}
+
+      <form action="/delete-result/{{_id}}" method="post">
+        <button class="delete-btn accordion-btn" type="submit">delete from my list</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="back-to-list">
+  <a href="/list"> <button class="big-btn" type="submit">
+      <h3>back to my list of sh*t</h3>
+    </button></a>
+</div>
+{{/if}}
+{{else}}
+<h1>sh*t I wanna eat</h1>
+<div class="no-user">
+  <h2>you're not logged in!</h2>
+  <h3><a href="/auth/signup">sign up</a> or <a href="/auth/login">log in</a> to see sh*t you wanna eat</h3>
+</div>
+{{/if}}

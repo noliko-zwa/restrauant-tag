@@ -1,0 +1,52 @@
+<div class="main-index">
+  <div class="title-index">
+    <h1 class="title-text">sh*t I wanna eat</h1>
+
+
+    {{#if user}}
+
+    <div class="section-index">
+      <div class="goToMap">
+        <h2>
+          <a href="/map">add new sh*t</a>
+        </h2>
+      </div>
+      {{else}}
+      <h2>
+        <a href="/auth/signup">sign up</a>
+      </h2>
+      {{/if}}
+      <div class="dish">
+        <div class="fork">
+          <img src="/images/fork.png" alt="fork">
+        </div>
+        <div class="plate">
+
+          <div class="contentPlate">
+            <div class="arrowU"><img src="/images/arrowu.png" alt="arrow"></div>
+            <h2>
+              <div class="swipe">SWIPE</div>
+            </h2>
+            <div class="arrowD"><img src="/images/arrowd.png" alt="arrow"></div>
+
+          </div>
+        </div>
+
+        <div class="knife">
+          <img src="/images/knife.png" alt="knife">
+        </div>
+      </div>
+      <div class="goToList">
+        {{#if user}}
+        <h2>
+          <a href="/list">list of my sh*t</a>
+        </h2>
+        {{else}}
+        <h2>
+          <a href="/auth/login">log in</a>
+        </h2>
+        {{/if}}
+      </div>
+
+    </div>
+  </div>
