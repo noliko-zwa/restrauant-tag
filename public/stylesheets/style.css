@@ -98,7 +98,8 @@ ul {
 .dish {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  touch-action: pan-y; }
 
 .plate {
   height: 315px;

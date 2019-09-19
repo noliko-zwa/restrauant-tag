@@ -126,6 +126,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  touch-action: pan-y;
 }
 
 .plate {
@@ -200,6 +201,7 @@ ul {
 
 .arrowU {
   width: 10%;
+
 }
 
 .arrowD img {
@@ -209,6 +211,7 @@ ul {
 
 .arrowD {
   width: 10%;
+
 }
 
 /*results lists*/

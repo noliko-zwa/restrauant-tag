@@ -18,7 +18,7 @@ function initMap() {
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      function(position) {
+      function (position) {
         let pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
@@ -30,7 +30,7 @@ function initMap() {
         infoWindow.open(map);
         map.setCenter(pos);
       },
-      function() {
+      function () {
         handleLocationError(true, infoWindow, map.getCenter());
       }
     );
@@ -42,9 +42,9 @@ function initMap() {
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(
-      browserHasGeolocation
-        ? "Error: The Geolocation service failed."
-        : "Error: Your browser doesn't support geolocation."
+      browserHasGeolocation ?
+      "Error: The Geolocation service failed." :
+      "Error: Your browser doesn't support geolocation."
     );
     infoWindow.open(map);
   }
@@ -99,7 +99,7 @@ function initMap() {
       icon: icon,
       animation: google.maps.Animation.DROP
     });
-    marker.addListener("click", function() {
+    marker.addListener("click", function () {
       infowindow.open(map, marker);
     });
     // To add the marker to the map, call setMap();
