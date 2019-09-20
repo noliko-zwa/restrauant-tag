@@ -46,7 +46,7 @@ router.get("/", (req, res, next) => {
 
 //access map
 router.get("/map", (req, res, next) => {
-  res.render("map");
+  res.render("map", { user: req.user });
 });
 
 //access search page to add new stuff
@@ -56,29 +56,37 @@ router.get("/add", (req, res, next) => {
 
 //show user's list of saved restaurants
 router.get("/list", (req, res, next) => {
-  const user = req.user;
-  Restaurant.find({
-    owner: user._id
-  }).then(restaurants => {
-    res.render("list", {
-      user: user,
-      restaurantList: restaurants
+  if (req.user) {
+    const user = req.user;
+    Restaurant.find({
+      owner: user._id
+    }).then(restaurants => {
+      res.render("list", {
+        user: user,
+        restaurantList: restaurants
+      });
+      console.log(user);
     });
-    console.log(user);
-  });
+  } else {
+    res.render("list");
+  }
 });
 
-//show user's map of saved restaurants !!!!!INCOMPLETE!!!!!!
+//show user's map of saved restaurants
 router.get("/my-map", (req, res, next) => {
-  const user = req.user;
-  Restaurant.find({
-    owner: user._id
-  }).then(restaurants => {
-    res.render("my-map", {
-      user: user,
-      restaurantList: restaurants
+  if (req.user) {
+    const user = req.user;
+    Restaurant.find({
+      owner: user._id
+    }).then(restaurants => {
+      res.render("my-map", {
+        user: user,
+        restaurantList: restaurants
+      });
     });
-  });
+  } else {
+    res.render("my-map");
+  }
 });
 
 //add new restaurant to list

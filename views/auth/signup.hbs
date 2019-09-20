@@ -15,19 +15,17 @@
           <input id="username" type="text" name="username" placeholder="hungry@feedme.com">
 
           <label for="password">Password</label>
-          <input id="password" type="password" name="password" placeholder="Your password">
+          <input id="password" type="password" name="password" placeholder="your password">
 
           {{#if message }}
           <div class="error-message">{{ message }}</div>
           {{/if}}
 
-          <button>Create account</button>
+          <button class="login-btn">create account</button>
         </form>
-        <a href="/auth/google"><button>Or sign up with Google</button></a>
-        Do you already
-        <br>
-        have an account?
-        <a href="/auth/login">Login</a>
+        <a href="/auth/google"><button class="login-btn">or sign up with Google</button></a>
+
+        <a href="/auth/login">log in</a>
 
       </div>
     </div>

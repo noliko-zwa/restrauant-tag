@@ -1,10 +1,12 @@
 <h1>find some new sh*t</h1>
 {{!-- map search bar --}}
+
+{{#if user}}
 <div class="search-container">
   <form id="yelp-search-bar" action="/search" method="get">
     <div class="search-bar">
-      <input id="yelp-input" name="q" type="text" placeholder="find...">
-      <button class="search-btn" type="submit">search</button>
+      <input id="yelp-input" name="q" type="text" placeholder="...">
+      <button class="search-btn" type="submit">search!</button>
     </div>
 
     <input type="text" name="lat" id="lat" style="display: none">
@@ -18,6 +20,18 @@
 </div> --}}
 
 {{!-- google map api for search autocomplete lace ID Geocoder --}}
-<script type="text/javascript"
+{{!-- <script type="text/javascript"
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7K8xVQEkyXx41h7IqJCPSuhwaipoq5jM&libraries=places&callback=initMap&language=en&region=de"
-  async defer></script>
+  async defer></script> --}}
+{{else}}
+<div class="list-no-user">
+
+  <div class="no-user">
+    <h2>you're not logged in!</h2>
+    <h3 class="big-btn"><a href="/auth/signup">sign up</a> </h3>
+    <h3> or </h3>
+    <h3 class="big-btn"><a href="/auth/login">log in</a> </h3>
+    <h3>to see sh*t you wanna eat</h3>
+  </div>
+</div>
+{{/if}}

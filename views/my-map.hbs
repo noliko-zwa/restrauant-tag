@@ -13,14 +13,20 @@
 {{/each}}
 
 {{else}}
-<h2>your map is empty!</h2>
-<h3> <a href="/map">add some sh*t to it</a></h3>
-{{/if}}
-{{else}}
-<div class="no-user">
-  <h2>you're not logged in!</h2>
-  <h3><a href="/auth/signup">sign up</a> or <a href="/auth/login">log in</a> to see sh*t you wanna eat</h3>
+<div class="list-no-user">
+  <h2>your map is empty!</h2>
+  <h3> <a href="/map">add some sh*t to it</a></h3>
+  {{/if}}
+  {{else}}
+  <div class="no-user">
+    <h2>you're not logged in!</h2>
+    <h3 class="big-btn"><a href="/auth/signup">sign up</a> </h3>
+    <h3> or </h3>
+    <h3 class="big-btn"><a href="/auth/login">log in</a> </h3>
+    <h3>to see sh*t you wanna eat</h3>
+  </div>
 </div>
+
 {{/if}}
 
 <script type="text/javascript"

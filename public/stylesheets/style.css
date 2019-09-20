@@ -24,7 +24,6 @@ body {
   content: "";
   z-index: -1; }
 
-/*google map searchform */
 h1,
 h2,
 h3,
@@ -35,13 +34,18 @@ p {
 a {
   color: azure; }
 
+h1,
+h2 {
+  margin: 20px 0; }
+
 /*searchform */
 .search-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%; }
+  width: 100%;
+  height: 50vh; }
 
 .search-bar {
   margin: 10px 0;
@@ -73,6 +77,21 @@ a {
   color: slategray;
   margin: 5%; }
 
+/*home*/
+.title-text {
+  text-align: center;
+  color: azure;
+  font-size: 3.5rem;
+  letter-spacing: 0.2rem;
+  font-weight: 900;
+  margin: 50px 0; }
+
+.main-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+
 ul {
   list-style-type: none; }
 
@@ -85,7 +104,7 @@ ul {
 .main-index {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   height: 100vh; }
 
@@ -94,6 +113,11 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+
+.goToList,
+.goToMap {
+  text-align: center;
+  align-self: center; }
 
 .dish {
   display: flex;
@@ -134,9 +158,25 @@ ul {
     justify-content: space-evenly;
     align-items: center; }
   .contentPlate-log-sign a:link {
-    color: darkblue; }
+    color: #d00090; }
   .contentPlate-log-sign a:visited {
-    color: darkblue; }
+    color: #d00090; }
+
+.contentPlate-log-sign h2 {
+  color: #d00090; }
+
+.contentPlate-log-sign input {
+  border: 1px solid #d00090;
+  border-radius: 8px;
+  padding: 2px;
+  margin-bottom: 12px; }
+
+.login-btn {
+  background: rgba(208, 0, 144, 0.5);
+  border-radius: 8px;
+  padding: 3px 10px;
+  border: 2px solid rgba(208, 0, 144, 0.9);
+  font-size: 0.9rem; }
 
 .fork {
   width: 11%; }
@@ -167,11 +207,30 @@ ul {
   width: 10%; }
 
 /*results lists*/
+.list-no-user {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.no-user {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
 .list-element {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-content: center; }
+
+.search-list-element {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  margin: 5px;
+  padding: 15px; }
 
 .list-element form {
   display: flex;
@@ -184,7 +243,8 @@ ul {
   flex-direction: column; }
 
 .add-btn {
-  font-size: 6rem; }
+  font-size: 6rem;
+  color: azure; }
 
 .popup {
   display: none; }
@@ -346,6 +406,9 @@ html {
   top: 0;
   padding: 0; }
 
+.nav-extra-space {
+  margin-bottom: 10px; }
+
 .navMenu li {
   padding: 5% 0%; }
 
@@ -374,10 +437,10 @@ a:visited {
   color: white; }
 
 .menu a:link {
-  color: darkblue; }
+  color: #d00090; }
 
 .menu a:visited {
-  color: darkblue; }
+  color: #d00090; }
 
 #nav-icon {
   width: 30px;
@@ -443,26 +506,6 @@ a:visited {
   top: 15px;
   width: 0%;
   right: 20%; }
-
-/*home*/
-.main-index {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
-
-.title-text {
-  text-align: center;
-  margin-bottom: 5rem;
-  color: azure;
-  font-size: 4rem;
-  letter-spacing: 0.2rem;
-  font-weight: 900; }
-
-.main-page {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center; }
 
 /*restaurant*/
 .back-to-list {
